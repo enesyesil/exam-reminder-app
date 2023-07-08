@@ -1,18 +1,14 @@
 
 import './App.css';
+import reminderList from './components/reminder-list';
 
-import SetReminder from './components/set-alarm';
+import SetReminder from './components/set-reminder';
 
 
 
 function App() {
   return (
-    <div className="App">
-     
-      <SetReminder></SetReminder>
-      
-     
-    </div>
+    <SetReminder></SetReminder>
   );
 }
 
