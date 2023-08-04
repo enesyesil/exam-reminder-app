@@ -16,8 +16,8 @@ function App() {
 
     <Routes>
       <Route path="/" element={<Navigate to="/read" />} />
-      <Route exact path="/add-reminder" element={<SetReminder/>}/>
-      <Route exact path="/reminder-list" element={<ReminderList/>}/>
+      <Route exact path="/read" element={<SetReminder/>}/>
+      <Route exact path="/read" element={<ReminderList/>}/>
     </Routes>
     
       

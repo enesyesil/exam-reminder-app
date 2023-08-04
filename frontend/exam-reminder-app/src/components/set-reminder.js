@@ -43,15 +43,15 @@ return(
   <Container>
   <Form onSubmit={submitHandler}>
     <Form.Group controlId="form.Name">
-        <Form.Label>User Name</Form.Label>
-        <Form.Control type="text" value={roomName} onChange={nameChangeHandler} placeholder="Enter User Name" required/>
+        <Form.Label>Room Name</Form.Label>
+        <Form.Control type="text" value={roomName} onChange={nameChangeHandler} placeholder="Enter Room Name" required/>
     </Form.Group>
     <Form.Group  controlId="form.Role">
-        <Form.Label>Role</Form.Label>
-        <Form.Control type="text" value={time} onChange={timeChangeHandler} placeholder="Enter Role" required/>
+        <Form.Label>time</Form.Label>
+        <Form.Control type="time" value={time} onChange={timeChangeHandler} placeholder="Enter Time" required/>
     </Form.Group>
     <br></br>
-    <Button type='submit'>Add Employee</Button>
+    <Button type='submit'>Add Reminder</Button>
     &nbsp;&nbsp;&nbsp;
     <Button type='submit' onClick={()=>cancelHandler()}>Cancel</Button>
   </Form>
