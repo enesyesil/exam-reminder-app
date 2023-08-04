@@ -1,9 +1,11 @@
 import React from "react";
 
-export default class reminderList extends React.Component {
+export default class ReminderList extends React.Component {
 
-Render() {
-    
+render() {
+    return{
+        
+    }
 }
 
 
