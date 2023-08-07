@@ -6,9 +6,9 @@ import axios from "axios";
 
 
 const SetReminder = () => {
-  const baseURL = "http://localhost:8080/employee";
+  const baseURL = "http://localhost:8080/reminder";
   const navigate = useNavigate();
-  const [roomName, setRoomName] = useState('');
+  const [name, setRoomName] = useState('');
   const [time, setTime] = useState('');
 
 
@@ -23,8 +23,8 @@ const timeChangeHandler = (event) => {
 const submitHandler = (event) => {
   event.preventDefault();
    axios.post(baseURL , {
-    RoomName: roomName,
-    Time : time
+    name: name,
+    time : time
    }).then((response) => {
     alert("Success!");
     navigate("/read");
@@ -44,10 +44,10 @@ return(
   <Form onSubmit={submitHandler}>
     <Form.Group controlId="form.Name">
         <Form.Label>Room Name</Form.Label>
-        <Form.Control type="text" value={roomName} onChange={nameChangeHandler} placeholder="Enter Room Name" required/>
+        <Form.Control type="text" value={name} onChange={nameChangeHandler} placeholder="Enter Room Name" required/>
     </Form.Group>
     <Form.Group  controlId="form.Role">
-        <Form.Label>time</Form.Label>
+        <Form.Label>Time</Form.Label>
         <Form.Control type="time" value={time} onChange={timeChangeHandler} placeholder="Enter Time" required/>
     </Form.Group>
     <br></br>
