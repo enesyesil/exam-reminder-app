@@ -5,7 +5,7 @@ import { Form, Button, Container, Alert } from 'react-bootstrap';
 
 
 const ReminderForm = () => {
-  const editURL = "http://localhost:8080/reminder/";
+  const editURL = "https://64d1657aff953154bb7a4ad6.mockapi.io/reminder/";
   const navigate = useNavigate();
   const param = useParams();
   const[reminderId, setReminderId] = useState('');

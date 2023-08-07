@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 const SetReminder = () => {
-  const baseURL = "http://localhost:8080/reminder";
+  const baseURL = "https://64d1657aff953154bb7a4ad6.mockapi.io/reminder";
   const navigate = useNavigate();
   const [name, setRoomName] = useState('');
   const [time, setTime] = useState('');

@@ -6,12 +6,12 @@ import "../App.css";
 
  const ReminderList = () => {
     const navigate = useNavigate();
-    const baseURL = "http://localhost:8080";
+    const baseURL = "https://64d1657aff953154bb7a4ad6.mockapi.io";
     const[reminder, setReminder ] = useState();
 
 
     const setReminderData = () => {
-        axios.get(baseURL + "/reminders").then((response) =>{
+        axios.get(baseURL + "/reminder").then((response) =>{
             setReminder(response.data);
 
         }).catch((err) =>  {
@@ -39,7 +39,7 @@ import "../App.css";
           setReminderData();
           navigate('/read')
         }).catch(error => {
-          alert("Error Ocurred in removeRminder:" );
+          alert("Error Ocurred in removeReminder:" );
         });
       }
     return(
@@ -94,6 +94,7 @@ import "../App.css";
                               onClick={() => removeReminder(reminder.id)} className="button"
                             > 
                             </button>
+                            
   
                           </td>
                         </tr>
