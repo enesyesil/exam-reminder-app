@@ -39,25 +39,61 @@ const cancelHandler = () => {
 }
 
 return(
-  <Alert variant='primary'>
-  <Container>
-  <Form onSubmit={submitHandler}>
-    <Form.Group controlId="form.Name">
-        <Form.Label>Room Name</Form.Label>
-        <Form.Control type="text" value={name} onChange={nameChangeHandler} placeholder="Enter Room Name" required/>
-    </Form.Group>
-    <Form.Group  controlId="form.Role">
-        <Form.Label>Time</Form.Label>
-        <Form.Control type="time" value={time} onChange={timeChangeHandler} placeholder="Enter Time" required/>
-    </Form.Group>
-    <br></br>
-    <Button type='submit'>Add Reminder</Button>
-    &nbsp;&nbsp;&nbsp;
-    <Button type='submit' onClick={()=>cancelHandler()}>Cancel</Button>
-  </Form>
+<div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4" role="alert">
+  <div class="container mx-auto">
+    <form onSubmit={submitHandler} class="w-full max-w-lg mx-auto pt-6">
+      
+      {/* Room Name Field */}
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="form.Name">
+          Room Name
+        </label>
+        <input 
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          id="form.Name" 
+          type="text" 
+          placeholder="Enter Room Name" 
+          value={name} 
+          onChange={nameChangeHandler} 
+          required 
+        />
+      </div>
 
-</Container>
-</Alert>
+      {/* Time Field */}
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" htmlFor="form.Role">
+          Time
+        </label>
+        <input 
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+          id="form.Role" 
+          type="time" 
+          placeholder="Enter Time" 
+          value={time} 
+          onChange={timeChangeHandler} 
+          required 
+        />
+      </div>
+
+      {/* Buttons */}
+      <div class="flex items-center justify-between">
+        <button 
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+          type="submit">
+          Add Reminder
+        </button>
+        <button 
+          class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+          type="button" 
+          onClick={cancelHandler}>
+          Cancel
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
 
 );
 

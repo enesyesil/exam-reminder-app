@@ -43,78 +43,66 @@ import "../App.css";
         });
       }
     return(
-        <div class="card-body">
-        <br>
-        </br>
-        <nav>
+      <div class="card-body">
+      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
           <button
-            className="btn btn-primary nav-item active"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={() => navigate("/create")}>
             Create New Reminder
           </button>
-        </nav>
-  
-  
-        <br></br>
-        <div className="col-md-6">
-          <h4>Reminder List</h4>
-  
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <table class="table table-bordered table-striped">
-                  <thead>
+        </div>
+    
+        <div class="mb-6">
+          <h4 class="text-gray-700 text-lg font-semibold">Reminder List</h4>
+          <div class="mt-4">
+            <div class="align-middle inline-block min-w-full">
+              <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
                     <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Time</th>
-                      <th scope="col">Action</th>
-  
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Id</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                     </tr>
                   </thead>
-                  <tbody>
-  
+                  <tbody class="bg-white divide-y divide-gray-200">
                     {
                       reminder &&
                       reminder.map((reminder, index) => (
-  
-                        <tr>
-                          <th scope="row">{reminder.id}</th>
-                          <td>{reminder.name}</td>
-                          <td>{reminder.time}</td>
-  
-  
-                          <td >
-  
-                            <Link to={"/edit/" + reminder.id}>
+                        <tr key={index}>
+                          <td class="px-6 py-4 whitespace-nowrap">{reminder.id}</td>
+                          <td class="px-6 py-4 whitespace-nowrap">{reminder.name}</td>
+                          <td class="px-6 py-4 whitespace-nowrap">{reminder.time}</td>
+                          <td class="px-6 py-4 whitespace-nowrap">
+                            <Link to={"/edit/" + reminder.id} class="text-indigo-600 hover:text-indigo-900">
+                              Edit
                             </Link>
-  
-  
                             <button
-                              onClick={() => removeReminder(reminder.id)} className="button"
-                            > 
+                              onClick={() => removeReminder(reminder.id)}
+                              class="text-red-600 hover:text-red-900 ml-4"
+                            >
+                              Delete
                             </button>
-                            
-  
                           </td>
                         </tr>
-  
                       ))
                     }
-  
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
-          <button className="btn btn-sm btn-danger"
+          <button
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded text-sm mt-4"
             onClick={() => removeAllReminder()}>
             Remove All
           </button>
         </div>
-  
       </div>
-  
+    </div>
+    
     );
 
 }
